@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import clsx from 'clsx'
 import Drawer from '@material-ui/core/Drawer'
 import Box from '@material-ui/core/Box'
 import useStyles from './AppSidebar.style'
+import { AppContext } from '../../components/utility/ContextProvider'
 
 interface AppSidebarProps {
   variant?: string
@@ -12,6 +13,8 @@ interface AppSidebarProps {
 
 const AppSidebar: React.FC<AppSidebarProps> = ({ variant = '' }) => {
   const classes = useStyles()
+  const { navCollapsed, changeNavCollapsed } = useContext(AppContext)
+
   return (
     <>
       <Drawer
@@ -19,7 +22,8 @@ const AppSidebar: React.FC<AppSidebarProps> = ({ variant = '' }) => {
           root: clsx(variant),
           paper: clsx(variant),
         }}
-        // open={true}
+        open={navCollapsed}
+        onClose={() => changeNavCollapsed()}
       >
         <Box height="100%" className={clsx(classes.sidebar, 'app-sidebar')}>
           <Box className={clsx(classes.sidebarBg, classes.sidebarStandard)}>

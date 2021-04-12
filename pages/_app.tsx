@@ -2,6 +2,7 @@ import '../styles/globals.css'
 import React from 'react'
 import PropTypes from 'prop-types'
 import { AppProps } from 'next/app'
+import ContextProvider from '../components/utility/ContextProvider'
 import CThemeProvider from '../components/utility/CThemeProvider'
 import CssBaseline from '@material-ui/core/CssBaseline'
 
@@ -18,10 +19,12 @@ export default function App({
   }, [])
 
   return (
-    <CThemeProvider>
-      <CssBaseline />
-      <Component {...pageProps} />
-    </CThemeProvider>
+    <ContextProvider>
+      <CThemeProvider>
+        <CssBaseline />
+        <Component {...pageProps} />
+      </CThemeProvider>
+    </ContextProvider>
   )
 }
 

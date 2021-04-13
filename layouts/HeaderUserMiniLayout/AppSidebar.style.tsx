@@ -4,6 +4,7 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     sidebar: {
       zIndex: 100,
+      height: `calc(100vh - 70px)`,
       width: '15rem',
       transition: 'all 0.5s ease',
 

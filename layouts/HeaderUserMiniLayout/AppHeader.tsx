@@ -1,30 +1,22 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
-import IconButton from '@material-ui/core/IconButton'
-import MenuIcon from '@material-ui/icons/Menu'
-import Typography from '@material-ui/core/Typography'
 import useStyles from './AppHeader.style'
-import { AppContext } from '../../components/utility/ContextProvider'
+import { Box } from '@material-ui/core'
 
 const AppHeader: React.FC = () => {
   const classes = useStyles()
-  const { changeNavCollapsed } = useContext(AppContext)
 
   return (
     <>
-      <AppBar style={{ maxHeight: '64px' }} color="inherit" position="fixed">
+      <AppBar className={classes.appBar} color="inherit" position="static">
         <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="open drawer"
-            onClick={() => changeNavCollapsed()}
-          >
-            <MenuIcon className={classes.menuIcon} />
-          </IconButton>
-          <Typography className={classes.appTitle}>Charles DEV</Typography>
+          <Box className={classes.appTitle}>
+            <Box className="primary" component="span">
+              NAMU
+            </Box>
+            <Box component="span"> DEV</Box>
+          </Box>
         </Toolbar>
       </AppBar>
     </>

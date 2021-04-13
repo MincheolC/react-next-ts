@@ -1,20 +1,22 @@
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
+import { createStyles, makeStyles } from '@material-ui/core/styles'
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(() =>
   createStyles({
     appMain: {
       height: '100vh',
       position: 'relative',
-      backgroundColor: theme.palette.background.default,
+      backgroundColor: '#fff',
     },
     mainContent: {
       flex: 1,
       paddingTop: 64,
       display: 'flex',
-      flexDirection: 'row',
+      justifyContent: 'center',
     },
     mainContainer: {
       width: '100%',
+      maxWidth: 1192,
+      margin: '0 64px',
     },
   })
 )

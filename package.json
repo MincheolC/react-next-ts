@@ -28,9 +28,11 @@
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
+    "date-fns": "^2.20.3",
     "next": "latest",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "sass": "^1.32.8"
   },
   "devDependencies": {
     "@testing-library/react": "^11.2.5",

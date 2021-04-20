@@ -7,10 +7,13 @@ import useStyles from './index.style'
 const dummyPostCard = [
   {
     title:
-      '[React] 리액트를 처음부터 배워보자. — 02. React.createElement와 React.Component 그리고 ReactDOM.render의 동작 원리',
+      '[React] 02. React.createElement와 React.Component 그리고 ReactDOM.render의 동작 원리',
+    content:
+      'Hi! I want to discuss with you how to manage Frontend architecture in large organizations. It feels to me that there are not many articles about this topic and it is not explained well.',
     thumbnail:
       'https://miro.medium.com/fit/c/100/100/1*AFDx1I-xmR3n4rx8w3H9bQ.jpeg',
     createdAt: 1602676800000,
+    tags: ['react', 'front-end'],
   },
   {
     title: 'Frontend Architecture at Scale for Large Organizations',
@@ -40,14 +43,18 @@ const Home: React.FC = () => {
       <Grid container spacing={3}>
         <Grid item xs={8}></Grid>
         <Grid item xs={4}>
-          {dummyPostCard.map(({ title, thumbnail, createdAt }, index) => (
-            <PostCard
-              key={index}
-              title={title}
-              thumbnail={thumbnail}
-              createdAt={createdAt}
-            />
-          ))}
+          {dummyPostCard.map(
+            ({ title, thumbnail, content, createdAt, tags }, index) => (
+              <PostCard
+                key={index}
+                title={title}
+                content={content}
+                thumbnail={thumbnail}
+                tags={tags}
+                createdAt={createdAt}
+              />
+            )
+          )}
         </Grid>
         <Grid item xs={12}></Grid>
       </Grid>

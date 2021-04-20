@@ -9,12 +9,28 @@ const useStyles = makeStyles((theme: Theme) =>
       borderBottom: `1px solid ${grey[300]}`,
       padding: '0 55px',
     },
+    toolBar: {
+      display: 'flex',
+      justifyContent: 'space-between',
+    },
     appTitle: {
       fontSize: Math.round(theme.typography.fontSize * 1.5),
       fontWeight: theme.typography.fontWeightBold,
-      '& > .primary': {
-        color: theme.palette.text.primary,
+    },
+    menuContainer: {
+      display: 'flex',
+      alignItems: 'center',
+      '& > a': {
+        margin: '0 6px',
+        '&:first-of-type': {
+          marginLeft: '20px',
+        },
       },
+    },
+    menu: {
+      fontSize: Math.round(theme.typography.fontSize),
+      fontWeight: theme.typography.fontWeightBold,
+      margin: '0 10px',
     },
   })
 )

@@ -1,5 +1,6 @@
 import React from 'react'
 import Box from '@material-ui/core/Box'
+import Grid from '@material-ui/core/Grid'
 import PostCard from '../../components/PostCard'
 import useStyles from './index.style'
 
@@ -36,36 +37,20 @@ const Home: React.FC = () => {
 
   return (
     <Box className={classes.mainBanner}>
-      <Box>
-        {dummyPostCard.map(({ title, thumbnail, createdAt }, index) => (
-          <PostCard
-            key={index}
-            title={title}
-            thumbnail={thumbnail}
-            createdAt={createdAt}
-          />
-        ))}
-      </Box>
-      <Box>
-        {dummyPostCard.map(({ title, thumbnail, createdAt }, index) => (
-          <PostCard
-            key={index}
-            title={title}
-            thumbnail={thumbnail}
-            createdAt={createdAt}
-          />
-        ))}
-      </Box>
-      <Box>
-        {dummyPostCard.map(({ title, thumbnail, createdAt }, index) => (
-          <PostCard
-            key={index}
-            title={title}
-            thumbnail={thumbnail}
-            createdAt={createdAt}
-          />
-        ))}
-      </Box>
+      <Grid container spacing={3}>
+        <Grid item xs={8}></Grid>
+        <Grid item xs={4}>
+          {dummyPostCard.map(({ title, thumbnail, createdAt }, index) => (
+            <PostCard
+              key={index}
+              title={title}
+              thumbnail={thumbnail}
+              createdAt={createdAt}
+            />
+          ))}
+        </Grid>
+        <Grid item xs={12}></Grid>
+      </Grid>
     </Box>
   )
 }

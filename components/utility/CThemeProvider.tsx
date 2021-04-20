@@ -6,6 +6,11 @@ const CThemeProvider: React.FC<React.ReactNode> = (props) => {
     typography: {
       fontFamily: '"Spoqa Han Sans Neo", "sans-serif"',
     },
+    palette: {
+      background: {
+        default: '#fff',
+      },
+    },
   }
   return (
     <ThemeProvider theme={createMuiTheme(cTheme)}>

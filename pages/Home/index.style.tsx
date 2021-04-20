@@ -4,7 +4,6 @@ const useStyles = makeStyles(() =>
   createStyles({
     mainBanner: {
       display: 'flex',
-      justifyContent: 'center',
       '& > div': {
         flex: 1,
       },

@@ -9,11 +9,11 @@ const AppHeader: React.FC = () => {
 
   return (
     <>
-      <AppBar className={classes.appBar} color="inherit" position="static">
+      <AppBar className={classes.appBar} color="inherit">
         <Toolbar>
           <Box className={classes.appTitle}>
             <Box className="primary" component="span">
-              NAMU
+              CHARLES
             </Box>
             <Box component="span"> DEV</Box>
           </Box>

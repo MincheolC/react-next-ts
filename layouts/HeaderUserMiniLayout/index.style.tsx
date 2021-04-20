@@ -5,18 +5,15 @@ const useStyles = makeStyles(() =>
     appMain: {
       height: '100vh',
       position: 'relative',
-      backgroundColor: '#fff',
     },
     mainContent: {
       flex: 1,
-      paddingTop: 64,
+      paddingTop: 120,
       display: 'flex',
-      justifyContent: 'center',
+      justifyContent: 'space-between',
     },
     mainContainer: {
       width: '100%',
-      maxWidth: 1192,
-      margin: '0 64px',
     },
   })
 )

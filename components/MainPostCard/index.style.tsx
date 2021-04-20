@@ -5,33 +5,18 @@ const useStyles = makeStyles((theme: Theme) =>
     container: {
       width: '100%',
       display: 'flex',
-      alignItems: 'flex-start',
-      justifyContent: 'space-between',
-      flex: '1 1 auto',
-      minHeight: '140px',
-
-      [theme.breakpoints.up('lg')]: {
-        padding: '0px 16px',
-      },
-
-      '&:not(:last-child)': {
-        paddingBottom: 28,
-      },
-
-      '&:not(:first-child)': {
-        paddingTop: 18,
-      },
+      flexDirection: 'column',
+      alignItems: 'center',
     },
     titleContiner: {
-      height: '100%',
-      width: '100%',
-      marginRight: theme.spacing(5),
+      marginTop: theme.spacing(3),
       display: 'flex',
       flexDirection: 'column',
+      alignItems: 'center',
     },
     title: {
       fontWeight: theme.typography.fontWeightBold,
-      fontSize: Math.round(theme.typography.fontSize * 1.5),
+      fontSize: Math.round(theme.typography.fontSize * 2),
     },
     content: {
       marginTop: '5px',

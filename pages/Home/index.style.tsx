@@ -1,4 +1,5 @@
 import { createStyles, makeStyles } from '@material-ui/core/styles'
+import grey from '@material-ui/core/colors/grey'
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -7,6 +8,10 @@ const useStyles = makeStyles(() =>
       '& > div': {
         flex: 1,
       },
+    },
+    mainPost: {
+      paddingRight: '4% !important',
+      borderRight: `1px solid ${grey[300]}`,
     },
   })
 )

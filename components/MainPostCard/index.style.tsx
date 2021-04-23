@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     title: {
       fontWeight: theme.typography.fontWeightBold,
-      fontSize: Math.round(theme.typography.fontSize * 2),
+      fontSize: Math.round(theme.typography.fontSize * 2.5),
     },
     content: {
       marginTop: '5px',

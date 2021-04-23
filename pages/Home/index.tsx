@@ -2,6 +2,7 @@ import React from 'react'
 import Box from '@material-ui/core/Box'
 import Grid from '@material-ui/core/Grid'
 import Divider from '@material-ui/core/Divider'
+import BarTitle, { BarTitleVariant } from '../../components/BarTitle'
 import PostCard from '../../components/PostCard'
 import MainPostCard from '../../components/MainPostCard'
 import useStyles from './index.style'
@@ -13,22 +14,25 @@ const dummyPostCard = [
       'Hi! I want to discuss with you how to manage Frontend architecture in large organizations. It feels to me that there are not many articles about this topic and it is not explained well.',
     thumbnail: 'https://picsum.photos/300/300',
     createdAt: 1602676800000,
-    tags: ['react', 'front-end'],
+    tags: ['React', 'Front-end'],
   },
   {
     title: 'Frontend Architecture at Scale for Large Organizations',
     thumbnail: 'https://picsum.photos/310/310',
     createdAt: 1589198400000,
+    tags: ['SW-engineering', 'Front-end'],
   },
   {
     title: '[React Props Cheatsheet: 10 Patterns You Should Know',
     thumbnail: 'https://picsum.photos/290/290',
     createdAt: 1615464000000,
+    tags: ['React', 'Front-end'],
   },
   {
     title: 'No Jira, No Cry',
     thumbnail: 'https://picsum.photos/280/280',
     createdAt: 1608811200000,
+    tags: ['Tools'],
   },
 ]
 
@@ -39,6 +43,7 @@ const Home: React.FC = () => {
     <Box className={classes.mainBanner}>
       <Grid container>
         <Grid item xs={8} className={classes.mainPost}>
+          <BarTitle variant={BarTitleVariant.SHORT} />
           <MainPostCard
             title="Three Things in Life That Aren’t Worth The Effort"
             content="To be more efficient and happy, cut the waste and damaging activities from your life."
@@ -47,6 +52,7 @@ const Home: React.FC = () => {
           />
         </Grid>
         <Grid item xs={4} style={{ paddingLeft: '3%' }}>
+          <BarTitle title="Popular Post" />
           {dummyPostCard.map(
             ({ title, thumbnail, content, createdAt, tags }, index) => (
               <>

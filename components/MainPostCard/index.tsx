@@ -26,7 +26,7 @@ const PostCard: React.FC<MainPostCardProps> = ({
       <Image
         src={thumbnail || 'https://picsum.photos/1200/800'}
         width={1200}
-        height={800}
+        height={650}
       />
       <Box className={classes.titleContiner}>
         <Box className={classes.title}>{title}</Box>

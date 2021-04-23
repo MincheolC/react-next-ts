@@ -8,7 +8,7 @@ const useStyles = makeStyles(() =>
     },
     mainContent: {
       flex: 1,
-      paddingTop: 120,
+      paddingTop: '140px',
       display: 'flex',
       justifyContent: 'space-between',
     },

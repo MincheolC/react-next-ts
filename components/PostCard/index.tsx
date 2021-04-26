@@ -4,14 +4,7 @@ import Box from '@material-ui/core/Box'
 import HashTag from '../HashTag'
 import { toPostDateString } from '../../helpers/timeUtils'
 import useStyles from './index.style'
-
-interface PostCardProps {
-  title: string
-  content?: string
-  thumbnail?: string
-  createdAt: number
-  tags?: string[]
-}
+import { PostCardProps } from '../../shared/types'
 
 const PostCard: React.FC<PostCardProps> = ({
   title,

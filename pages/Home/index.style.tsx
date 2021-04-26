@@ -13,6 +13,9 @@ const useStyles = makeStyles(() =>
       paddingRight: '4% !important',
       borderRight: `1px solid ${grey[300]}`,
     },
+    posts: {
+      marginTop: '100px',
+    },
   })
 )
 

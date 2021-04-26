@@ -52,7 +52,7 @@ const Home: React.FC = () => {
           />
         </Grid>
         <Grid item xs={4} style={{ paddingLeft: '3%' }}>
-          <BarTitle title="Popular Post" />
+          <BarTitle title="Latest Post" />
           {dummyPostCard.map(
             ({ title, thumbnail, content, createdAt, tags }, index) => (
               <>
@@ -69,7 +69,7 @@ const Home: React.FC = () => {
             )
           )}
         </Grid>
-        <Grid item xs={12}></Grid>
+        <Grid container item xs={12} className={classes.posts}></Grid>
       </Grid>
     </Box>
   )

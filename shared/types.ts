@@ -10,3 +10,7 @@ export interface PostCardProps {
   createdAt: number
   tags?: string[]
 }
+
+export interface Style {
+  [key: string]: string
+}

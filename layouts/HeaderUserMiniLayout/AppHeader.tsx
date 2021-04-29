@@ -1,4 +1,5 @@
 /* eslint-disable react/jsx-no-target-blank */
+import Link from 'next/link'
 import Image from 'next/image'
 import React from 'react'
 import AppBar from '@material-ui/core/AppBar'
@@ -7,9 +8,14 @@ import Box from '@material-ui/core/Box'
 import GitHubIcon from '@material-ui/icons/GitHub'
 import useStyles from './AppHeader.style'
 
+interface Menu {
+  name: string
+  url: string
+}
+
 interface AppHeaderProps {
   title: string
-  menu: string[]
+  menu: Array<Menu>
 }
 
 const AppHeader: React.FC<AppHeaderProps> = (props) => {
@@ -21,10 +27,10 @@ const AppHeader: React.FC<AppHeaderProps> = (props) => {
         <Toolbar className={classes.toolBar}>
           <Box className={classes.appTitle}>{props.title}</Box>
           <Box className={classes.menuContainer}>
-            {props.menu.map((name) => (
-              <Box key={name} className={classes.menu} component="span">
-                {name}
-              </Box>
+            {props.menu.map(({ name, url }) => (
+              <Link key={name} href={url}>
+                <a className={classes.menu}>{name}</a>
+              </Link>
             ))}
             <a href="https://github.com/MincheolC" target="_blank">
               <GitHubIcon style={{ fontSize: 30 }} />

@@ -4,7 +4,12 @@ import AppHeader from './AppHeader'
 import useStyles from './index.style'
 
 const APP_TITLE = 'CHARLES DEV'
-const MENU = ['REACT', 'FLUTTER', 'TYPESCRIPT', 'CSS']
+const MENU = [
+  { name: 'REACT', url: '/' },
+  { name: 'CSS', url: '/css' },
+  { name: 'FLUTTER', url: '/' },
+  { name: 'TYPESCRIPT', url: '/' },
+]
 
 const HeaderUserMiniLayout: React.FC<React.ReactNode> = (props) => {
   const classes = useStyles()

@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react'
 import useStyles from './index.style'
-import { Circle } from '../../../helpers/canvasUtils'
+import { Circle, CircleBuilder, DrawType } from '../../../helpers/canvasUtils'
 
 function createRandomCircles(
   n: number,
@@ -16,7 +16,12 @@ function createRandomCircles(
     const dx = (Math.random() - 0.5) * 10
     const dy = (Math.random() - 0.5) * 10
 
-    arr.push(new Circle(x, y, dx, dy, radius, 'white', ctx))
+    const circle: Circle = new CircleBuilder(x, y, radius, ctx)
+      .velocity(dx, dy)
+      .color('white')
+      .type(DrawType.STROKE)
+      .build()
+    arr.push(circle)
   }
   return arr
 }
@@ -24,6 +29,8 @@ function createRandomCircles(
 const CircleAnimation: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const classes = useStyles()
+  const width = 700
+  const height = 500
   let circles
   let canvas: HTMLCanvasElement
   let ctx: CanvasRenderingContext2D
@@ -51,12 +58,15 @@ const CircleAnimation: React.FC = () => {
     ctx = canvas.getContext('2d')
     circles = createRandomCircles(50, 30, ctx, 500, 500)
 
+    canvas.width = width
+    canvas.height = height
+
     const animate = () => {
       requestId = requestAnimationFrame(animate)
-      ctx.clearRect(0, 0, innerWidth, innerHeight)
+      ctx.clearRect(0, 0, width, height)
 
       circles.forEach((circle) => {
-        const [dx, dy] = getDxDy(circle, 500, 500)
+        const [dx, dy] = getDxDy(circle, width, height)
         circle.dx = dx
         circle.dy = dy
 
@@ -74,14 +84,7 @@ const CircleAnimation: React.FC = () => {
     }
   }, [])
 
-  return (
-    <canvas
-      ref={canvasRef}
-      className={classes.canvas}
-      width={500}
-      height={500}
-    />
-  )
+  return <canvas ref={canvasRef} className={classes.canvas} />
 }
 
 export default CircleAnimation

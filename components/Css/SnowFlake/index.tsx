@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react'
 import useStyles from './index.style'
-import { Circle as Snow } from '../../../helpers/canvasUtils'
+import { Circle as Snow, CircleBuilder } from '../../../helpers/canvasUtils'
 
 function createSnows(
   n: number,
@@ -19,7 +19,11 @@ function createSnows(
     const dy = 1 + Math.random() * speedScale
     const radius = 1 + Math.random() * radiusScale
 
-    snows.push(new Snow(x, y, dx, dy, radius, 'white', ctx))
+    const snow: Snow = new CircleBuilder(x, y, radius, ctx)
+      .velocity(dx, dy)
+      .color('white')
+      .build()
+    snows.push(snow)
   }
 
   return snows
@@ -32,7 +36,7 @@ const SnowFlake: React.FC = () => {
   let ctx: CanvasRenderingContext2D
   let snows
   let requestId
-  const width = 500
+  const width = 700
   const height = 500
 
   useEffect(() => {
@@ -42,6 +46,9 @@ const SnowFlake: React.FC = () => {
     canvas = canvasRef.current
     ctx = canvas.getContext('2d')
     snows = createSnows(600, ctx, width, height)
+
+    canvas.width = width
+    canvas.height = height
 
     const animate = () => {
       requestId = requestAnimationFrame(animate)
@@ -71,14 +78,7 @@ const SnowFlake: React.FC = () => {
     }
   }, [])
 
-  return (
-    <canvas
-      className={classes.canvas}
-      ref={canvasRef}
-      width={500}
-      height={500}
-    />
-  )
+  return <canvas className={classes.canvas} ref={canvasRef} />
 }
 
 export default SnowFlake

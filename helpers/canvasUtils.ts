@@ -10,8 +10,8 @@ export class Circle implements Animation {
   dy
   radius
   ctx
-  color = 'white'
-  drawType = DrawType.FILL
+  color
+  drawType
 
   constructor(
     x: number,
@@ -19,8 +19,9 @@ export class Circle implements Animation {
     dx: number,
     dy: number,
     radius: number,
-    color: string,
-    ctx: CanvasRenderingContext2D
+    color = 'white',
+    ctx: CanvasRenderingContext2D,
+    drawType = DrawType.FILL
   ) {
     this.x = x
     this.y = y
@@ -29,6 +30,7 @@ export class Circle implements Animation {
     this.radius = radius
     this.ctx = ctx
     this.color = color
+    this.drawType = drawType
   }
 
   draw(): void {
@@ -48,6 +50,53 @@ export class Circle implements Animation {
     this.y = y
 
     this.draw()
+  }
+}
+
+export class CircleBuilder {
+  x
+  y
+  dx
+  dy
+  radius
+  ctx
+  colorType
+  drawType
+
+  constructor(x = 0, y = 0, radius = 5, ctx: CanvasRenderingContext2D) {
+    this.x = x
+    this.y = y
+    this.radius = radius
+    this.ctx = ctx
+  }
+
+  velocity(dx = 0, dy = 0): CircleBuilder {
+    this.dx = dx
+    this.dy = dy
+    return this
+  }
+
+  color(color = 'white'): CircleBuilder {
+    this.colorType = color
+    return this
+  }
+
+  type(drawType = DrawType.FILL): CircleBuilder {
+    this.drawType = drawType
+    return this
+  }
+
+  build(): Circle {
+    return new Circle(
+      this.x,
+      this.y,
+      this.dx,
+      this.dy,
+      this.radius,
+      this.colorType,
+      this.ctx,
+      this.drawType
+    )
   }
 }
 

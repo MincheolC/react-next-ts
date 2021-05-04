@@ -1,44 +1,6 @@
 import React, { useRef, useEffect } from 'react'
 import useStyles from './index.style'
-
-interface Animation {
-  draw(): void
-  update(dx: number, dy: number): void
-}
-
-class Circle implements Animation {
-  x: number
-  y: number
-  dx: number
-  dy: number
-  radius: number
-  ctx: CanvasRenderingContext2D
-
-  constructor(x, y, dx, dy, radius, ctx) {
-    this.x = x
-    this.y = y
-    this.dx = dx
-    this.dy = dy
-    this.radius = radius
-    this.ctx = ctx
-  }
-
-  draw() {
-    this.ctx.beginPath()
-    this.ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false)
-    this.ctx.strokeStyle = 'white'
-    this.ctx.stroke()
-  }
-
-  update(dx, dy) {
-    this.x += dx
-    this.y += dy
-    this.dx = dx
-    this.dy = dy
-
-    this.draw()
-  }
-}
+import { Circle } from '../../../helpers/canvasUtils'
 
 function createRandomCircles(
   n: number,
@@ -54,7 +16,7 @@ function createRandomCircles(
     const dx = (Math.random() - 0.5) * 10
     const dy = (Math.random() - 0.5) * 10
 
-    arr.push(new Circle(x, y, dx, dy, radius, ctx))
+    arr.push(new Circle(x, y, dx, dy, radius, 'white', ctx))
   }
   return arr
 }
@@ -95,7 +57,13 @@ const CircleAnimation: React.FC = () => {
 
       circles.forEach((circle) => {
         const [dx, dy] = getDxDy(circle, 500, 500)
-        circle.update(dx, dy)
+        circle.dx = dx
+        circle.dy = dy
+
+        const x = circle.x + circle.dx
+        const y = circle.y + circle.dy
+
+        circle.update(x, y)
       })
     }
 

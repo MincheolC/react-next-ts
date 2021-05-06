@@ -32,10 +32,15 @@ const AppHeader: React.FC<AppHeaderProps> = (props) => {
                 <a className={classes.menu}>{name}</a>
               </Link>
             ))}
-            <a href="https://github.com/MincheolC" target="_blank">
+            <a
+              data-testid="myGithub"
+              href="https://github.com/MincheolC"
+              target="_blank"
+            >
               <GitHubIcon style={{ fontSize: 30 }} />
             </a>
             <a
+              data-testid="myNotion"
               href="https://www.notion.so/Charles-Dev-b2c65d1ae5ee4df99d4e24abe37eb38a"
               target="_blank"
             >

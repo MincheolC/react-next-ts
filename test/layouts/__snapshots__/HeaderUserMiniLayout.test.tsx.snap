@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderUserMiniLayout matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiBox-root MuiBox-root-4 makeStyles-appMain-1"
+  >
+    <header
+      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorInherit makeStyles-appBar-5 mui-fixed MuiPaper-elevation4"
+    >
+      <div
+        class="MuiToolbar-root MuiToolbar-regular makeStyles-toolBar-6 MuiToolbar-gutters"
+      >
+        <div
+          class="MuiBox-root MuiBox-root-10 makeStyles-appTitle-7"
+        >
+          CHARLES DEV
+        </div>
+        <div
+          class="MuiBox-root MuiBox-root-11 makeStyles-menuContainer-8"
+        >
+          <a
+            class="makeStyles-menu-9"
+            href="/"
+          >
+            REACT
+          </a>
+          <a
+            class="makeStyles-menu-9"
+            href="/css"
+          >
+            CSS
+          </a>
+          <a
+            class="makeStyles-menu-9"
+            href="/"
+          >
+            FLUTTER
+          </a>
+          <a
+            class="makeStyles-menu-9"
+            href="/"
+          >
+            TYPESCRIPT
+          </a>
+          <a
+            data-testid="myGithub"
+            href="https://github.com/MincheolC"
+            target="_blank"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root"
+              focusable="false"
+              style="font-size: 30px;"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8 0 3.2.9.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"
+              />
+            </svg>
+          </a>
+          <a
+            data-testid="myNotion"
+            href="https://www.notion.so/Charles-Dev-b2c65d1ae5ee4df99d4e24abe37eb38a"
+            target="_blank"
+          >
+            <div
+              style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+            >
+              <div
+                style="box-sizing: border-box; display: block; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  role="presentation"
+                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzEiIGhlaWdodD0iMzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
+                  style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
+                />
+              </div>
+              <noscript />
+              <img
+                decoding="async"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+              />
+            </div>
+          </a>
+        </div>
+      </div>
+    </header>
+    <div
+      class="MuiBox-root MuiBox-root-12 makeStyles-mainContent-2"
+    >
+      <div
+        class="MuiBox-root MuiBox-root-13 makeStyles-mainContainer-3"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -63,9 +63,8 @@ const Home: React.FC = () => {
           <BarTitle title="Latest Post" />
           {getLatest(dummyPostCard, 4).map(
             ({ title, thumbnail, content, createdAt, tags }, index) => (
-              <>
+              <div key={index}>
                 <PostCard
-                  key={index}
                   title={title}
                   content={content}
                   thumbnail={thumbnail}
@@ -73,7 +72,7 @@ const Home: React.FC = () => {
                   createdAt={createdAt}
                 />
                 <Divider variant="middle" />
-              </>
+              </div>
             )
           )}
         </Grid>
